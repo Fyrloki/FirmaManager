@@ -1,0 +1,94 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10 Client", "10 Client", "{D02969F7-02D7-4548-B4F6-E9F218307585}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "20 Business", "20 Business", "{3ECEE9DF-D12A-48B6-A260-1609D5C69388}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "30 Data", "30 Data", "{C8FA5085-7FDD-421C-B69F-74480622C040}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "40 Common", "40 Common", "{E82636CD-10ED-4063-9D86-27CD34E70567}"
+	ProjectSection(SolutionItems) = preProject
+		FimaManager.Common\Configs\Configurator.cs = FimaManager.Common\Configs\Configurator.cs
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FimaManager.Business", "FimaManager.Business\FimaManager.Business.csproj", "{B5B11F66-36B6-4579-9375-418CD675053C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FimaManager.Common", "FimaManager.Common\FimaManager.Common.csproj", "{C930BE0E-86AA-450C-BB2E-EA4601A8D437}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FirmaManagerTest", "FirmaManagerTest\FirmaManagerTest.csproj", "{8EFE5D6D-13A6-4F8E-9BFA-641E56B6AD84}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FirmaManager.EntityFrameworkData", "FirmaManager.EntityFrameworkData\FirmaManager.EntityFrameworkData.csproj", "{3447F4CB-6720-4176-B14C-6A9A5128900A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "99 Test", "99 Test", "{0C97B8B4-A06D-4EC1-BD3F-FF6260C187E2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FirmaManager", "FirmaManager\FirmaManager.csproj", "{5152A08B-503B-490B-B230-4614AA392186}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B5B11F66-36B6-4579-9375-418CD675053C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5B11F66-36B6-4579-9375-418CD675053C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5B11F66-36B6-4579-9375-418CD675053C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5B11F66-36B6-4579-9375-418CD675053C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C930BE0E-86AA-450C-BB2E-EA4601A8D437}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C930BE0E-86AA-450C-BB2E-EA4601A8D437}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C930BE0E-86AA-450C-BB2E-EA4601A8D437}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C930BE0E-86AA-450C-BB2E-EA4601A8D437}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EFE5D6D-13A6-4F8E-9BFA-641E56B6AD84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EFE5D6D-13A6-4F8E-9BFA-641E56B6AD84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EFE5D6D-13A6-4F8E-9BFA-641E56B6AD84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EFE5D6D-13A6-4F8E-9BFA-641E56B6AD84}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3447F4CB-6720-4176-B14C-6A9A5128900A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3447F4CB-6720-4176-B14C-6A9A5128900A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3447F4CB-6720-4176-B14C-6A9A5128900A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3447F4CB-6720-4176-B14C-6A9A5128900A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5152A08B-503B-490B-B230-4614AA392186}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5152A08B-503B-490B-B230-4614AA392186}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5152A08B-503B-490B-B230-4614AA392186}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5152A08B-503B-490B-B230-4614AA392186}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B5B11F66-36B6-4579-9375-418CD675053C} = {3ECEE9DF-D12A-48B6-A260-1609D5C69388}
+		{C930BE0E-86AA-450C-BB2E-EA4601A8D437} = {E82636CD-10ED-4063-9D86-27CD34E70567}
+		{8EFE5D6D-13A6-4F8E-9BFA-641E56B6AD84} = {0C97B8B4-A06D-4EC1-BD3F-FF6260C187E2}
+		{3447F4CB-6720-4176-B14C-6A9A5128900A} = {C8FA5085-7FDD-421C-B69F-74480622C040}
+		{5152A08B-503B-490B-B230-4614AA392186} = {D02969F7-02D7-4548-B4F6-E9F218307585}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F2DC6EAF-F889-4F74-A4CE-B4D5314CAAC7}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = FimaManager.Business\\FimaManager.Business.csproj
+		SccProjectTopLevelParentUniqueName1 = FirmaManager.sln
+		SccProjectName1 = FimaManager.Business
+		SccLocalPath1 = FimaManager.Business
+		SccProjectUniqueName2 = FimaManager.Common\\FimaManager.Common.csproj
+		SccProjectTopLevelParentUniqueName2 = FirmaManager.sln
+		SccProjectName2 = FimaManager.Common
+		SccLocalPath2 = FimaManager.Common
+		SccProjectUniqueName3 = FirmaManagerTest\\FirmaManagerTest.csproj
+		SccProjectTopLevelParentUniqueName3 = FirmaManager.sln
+		SccProjectName3 = FirmaManagerTest
+		SccLocalPath3 = FirmaManagerTest
+		SccProjectUniqueName4 = FirmaManager.EntityFrameworkData\\FirmaManager.EntityFrameworkData.csproj
+		SccProjectTopLevelParentUniqueName4 = FirmaManager.sln
+		SccProjectName4 = FirmaManager.EntityFrameworkData
+		SccLocalPath4 = FirmaManager.EntityFrameworkData
+		SccProjectUniqueName5 = FirmaManager\\FirmaManager.csproj
+		SccProjectTopLevelParentUniqueName5 = FirmaManager.sln
+		SccProjectName5 = FirmaManager
+		SccLocalPath5 = FirmaManager
+	EndGlobalSection
+EndGlobal

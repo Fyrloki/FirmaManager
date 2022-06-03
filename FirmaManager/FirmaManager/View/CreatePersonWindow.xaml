@@ -1,0 +1,249 @@
+﻿<Window x:Class="FirmaManager.View.CreatePersonWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:FirmaManager.ViewModel"
+        xmlns:co="clr-namespace:FirmaManager.Converter"
+        mc:Ignorable="d"
+        Name="savePersonWindow"
+        Title="{Binding Title}"
+        Height="270" Width="434"
+        ResizeMode="NoResize">
+
+    <Window.Resources>
+        <co:GenderDesignationConverter x:Key="genderDesignationConverter"/>
+        <co:BoolToVisibilityConverter x:Key="boolToVisibilityConverter"/>
+    </Window.Resources>
+
+    <Window.DataContext>
+        <vm:CreatePersonViewModel/>
+    </Window.DataContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="1" Grid.ColumnSpan="3" BorderBrush="LightGray" BorderThickness="0,0,0,1"/>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="129"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+
+            <DockPanel
+                Grid.Column="0"
+                Grid.Row="0" Margin="0,0,0,45" Grid.RowSpan="2">
+
+                <TextBlock 
+                    Margin="10,0,0,0"
+                    Text="Nachname:"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    FontSize="13">
+                </TextBlock>
+
+                <Label 
+                    Content="*"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    FontSize="13"
+                    Foreground="Red"
+                    Visibility="{Binding IsLastNameValid, Converter={StaticResource boolToVisibilityConverter}}">
+                </Label>
+            </DockPanel>
+
+            <TextBox
+                Text="{Binding LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                Margin="8,8,8,8"
+                TabIndex="1" 
+                Grid.Column="1">
+            </TextBox>
+
+            <DockPanel
+                Grid.Row="1" Margin="0,0,0,44" Grid.RowSpan="2">
+                <TextBlock 
+                    Margin="10,0,0,0"
+                    Text="Vorname:"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    FontSize="13"
+                    Grid.Row="1">
+                </TextBlock>
+
+                <Label 
+                    Content="*"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    FontSize="13"
+                    Foreground="Red"
+                    Visibility="{Binding IsFirstNameValid, Converter={StaticResource boolToVisibilityConverter}}">
+                </Label>
+            </DockPanel>
+
+            <TextBox
+                Text="{Binding FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                Margin="8,8,8,8"
+                TabIndex="2" 
+                Grid.Column="1"
+                Grid.Row="1">
+            </TextBox>
+
+            <DockPanel Grid.Row="2">
+                <TextBlock 
+                    Margin="10,0,0,0"
+                    Text="Personennummer:"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    FontSize="13"
+                    Grid.Row="2">
+                </TextBlock>
+
+                <Label 
+                    Content="*"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    FontSize="13"
+                    Foreground="Red"
+                    Visibility="{Binding IsPersonnumberValid, Converter={StaticResource boolToVisibilityConverter}}">
+                </Label>
+            </DockPanel>
+
+            <TextBox
+                Text="{Binding Personnumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                Margin="8,8,8,8"
+                TabIndex="3" 
+                Grid.Column="1"
+                Grid.Row="2"
+                MaxLength="4"
+                IsEnabled="{Binding IsCreate}">
+            </TextBox>
+
+            <DockPanel 
+                Grid.Row="3">
+
+                <TextBlock 
+                    Margin="10,0,0,0"
+                    Text="Geschlecht:"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    FontSize="13"
+                    Grid.Row="3" Height="17" Width="65">
+                </TextBlock>
+
+                <Label 
+                    Content="*"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    FontSize="13"
+                    Foreground="Red"
+                    Visibility="{Binding IsGenderValid, Converter={StaticResource boolToVisibilityConverter}}">
+                </Label>
+            </DockPanel>
+
+            <ComboBox   
+                ItemsSource="{Binding Genderlist}"
+                SelectedItem="{Binding SelectedGender, Mode=TwoWay, Converter={StaticResource genderDesignationConverter}, UpdateSourceTrigger=PropertyChanged}"
+                Margin="8,8,8,8"
+                TabIndex="4" 
+                Grid.Column="1"
+                Grid.Row="3"
+                IsEnabled="{Binding IsCreate}">
+            </ComboBox>
+
+            <DockPanel Grid.Row="4">
+                <TextBlock 
+                    Margin="10,0,0,0"
+                    Text="Geburtsdatum:"
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Center"
+                    FontSize="13"
+                    Grid.Row="4" 
+                    Height="17" Width="85">
+                </TextBlock>
+
+            </DockPanel>
+
+            <DatePicker    
+                DisplayDateEnd="{Binding Mode=OneWay, Source={x:Static System:DateTime.Today}}"
+                DisplayDateStart="1/1/1910"
+                SelectedDate="{Binding Birthdate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                Margin="8,8,8,8"
+                TabIndex="5" 
+                Grid.Column="1"
+                Grid.Row="4"
+                IsEnabled="{Binding IsCreate}">
+                <DatePicker.Resources>
+                    <Style TargetType="DatePickerTextBox">
+                        <Setter Property="IsReadOnly" Value="True"/>
+                    </Style>
+                </DatePicker.Resources>    
+            </DatePicker>
+        </Grid>
+
+        <DockPanel            
+            Grid.Row="1"
+            HorizontalAlignment="Right"
+            Width="auto">
+            <Button
+                IsDefault="True"
+                Command="{Binding SavePersonCommand}"
+                Grid.Column="1"
+                Width="90"
+                Grid.Row="2"
+                Margin="5"                
+                Height="20"
+                VerticalAlignment="Bottom"
+                Content="{Binding OperationName, Mode=TwoWay}"
+                TabIndex="6">
+            </Button>
+
+            <Button
+                IsCancel="True"
+                Command="{Binding CloseWindowCommand}"
+                Grid.Column="1"
+                Width="90"
+                Grid.Row="2"
+                Margin="5"
+                Height="20"
+                VerticalAlignment="Bottom"
+                Content="Abbrechen"
+                TabIndex="7">
+            </Button>
+
+            <Button
+                Command="{Binding ApplyCommand}"
+                Grid.Column="1"
+                Width="90"
+                Grid.Row="2"
+                Margin="5"
+                Height="20"
+                VerticalAlignment="Bottom"
+                Content="Übernehmen"
+                TabIndex="8"
+                Visibility="{Binding IsCreate, Converter={StaticResource boolToVisibilityConverter}, UpdateSourceTrigger=PropertyChanged}">
+            </Button>
+        </DockPanel>
+
+        <Label
+            HorizontalAlignment="Right"
+            VerticalAlignment="Bottom"
+            Content="{Binding Status, Mode=TwoWay}"
+            Grid.Row="2"
+            Foreground="Blue">
+        </Label>
+    </Grid>
+</Window>
